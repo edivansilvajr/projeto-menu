@@ -38,6 +38,10 @@ input#check:checked ~ #sideBar {
     color: white;
 }
 
+#sideBar h3  #closeMenu {
+    margin-left: 30%;
+}
+
 #sideBar #closeMenu {
     cursor: pointer;
 }
@@ -49,14 +53,21 @@ menu {
 }
 
 menu li {
-    padding: 20px 0px 0px 0px;
+    padding: 20px 0px 20px 0px;
     border-radius: 10px;
+}
+
+menu li .material-icons {
+    color: white;
+    padding-left: 15px;
+    vertical-align: middle;
 }
 
 menu li a {
     text-decoration: none;
     color: white;
     font-size: 1.2em;
+    padding-left: 10px;
 }
 
 menu li:hover {
@@ -98,7 +109,7 @@ main p {
 }
 
 footer {
-    background-color: black;
+    background-color: #0B2B40;
 }
 
 footer p {
