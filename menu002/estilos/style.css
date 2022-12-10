@@ -22,11 +22,10 @@ input#check:checked ~ #sideBar {
 
 #sideBar {
     position: fixed;
-    left: -35%;
+    left: -250px;
 
-    width: 35%;
-    
-
+    width: 250px;
+    height: 100vh;
     background-color: red;
     padding: 10px;
     background-color: #1E5959;
@@ -35,16 +34,18 @@ input#check:checked ~ #sideBar {
 }
 
 #sideBar h3 {
+    position: relative;
     color: white;
+    border-bottom: 1px solid #89D99D;
+    padding: 15px;
 }
 
 #sideBar h3  #closeMenu {
-    margin-left: 30%;
-}
-
-#sideBar #closeMenu {
+    position: absolute;
+    left: 85%;
     cursor: pointer;
 }
+
 
 menu {
     list-style-type: none;
