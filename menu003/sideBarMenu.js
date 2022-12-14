@@ -15,9 +15,5 @@ btnCloseMenu.onclick = function() {
     }
 }
 
-window.onscroll = function() {
-    if(sideBarMenu.style.left == '0px') {
-        sideBarMenu.style.left = '-250px'
-    }
-}
+
 
