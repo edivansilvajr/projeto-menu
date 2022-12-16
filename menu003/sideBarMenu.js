@@ -15,5 +15,14 @@ btnCloseMenu.onclick = function() {
     }
 }
 
+sideBarMenu.onmouseover = function () {
+    document.body.style.overflow = 'hidden'
+}
 
+sideBarMenu.onmouseout = function () {
+    document.body.style.overflow = 'auto'
+}
 
+window.onscroll = function () {
+    sideBarMenu.style.left = '-250px'
+}
