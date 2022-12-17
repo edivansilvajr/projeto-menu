@@ -19,6 +19,16 @@ sideBarMenu.onmouseover = function () {
     document.body.style.overflow = 'hidden'
 }
 
+sideBarMenu.ontouchmove = function () {
+    document.body.style.overflow = 'hidden'
+}
+
+sideBarMenu.ontouchend = function () {
+    document.body.style.overflow = 'auto'
+}
+
+
+
 sideBarMenu.onmouseout = function () {
     document.body.style.overflow = 'auto'
 }
