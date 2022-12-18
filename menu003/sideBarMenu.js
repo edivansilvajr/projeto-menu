@@ -10,7 +10,8 @@ btnOpenMenu.onclick = function (e) {
     }
 }
 
-btnCloseMenu.onclick = function () {
+btnCloseMenu.onclick = function (e) {
+    e.stopPropagation()
     if (sideBarMenu.style.left == '0px') {
         sideBarMenu.style.left = '-250px'
     }
@@ -19,6 +20,11 @@ btnCloseMenu.onclick = function () {
 sideBarMenu.onmouseover = function (e) {
     e.stopPropagation()
     document.body.style.overflow = 'hidden'
+}
+
+sideBarMenu.onclick = function (e) {
+    e.stopPropagation()
+    sideBarMenu.style.left = '0px'
 }
 
 
