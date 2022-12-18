@@ -3,43 +3,40 @@ let btnCloseMenu = document.getElementById('closeMenu')
 let sideBarMenu = document.getElementById('sideBar')
 
 
-// btnOpenMenu.onclick = function() {
-//     if(sideBarMenu.style.left != '0') {
-//         sideBarMenu.style.left = '0'
-//     }
-// }
-
-// btnCloseMenu.onclick = function() {
-//     if(sideBarMenu.style.left == '0px') {
-//         sideBarMenu.style.left = '-250px'
-//         document.body.style.overflow = 'auto'
-//     }
-// }
-
-// sideBarMenu.onmouseover = function () {
-//     document.body.style.overflow = 'hidden'
-// }
-
-
-// sideBarMenu.onmouseout = function () {
-//     document.body.style.overflow = 'auto'
-// }
-
-// window.onscroll = function () {
-//     sideBarMenu.style.left = '-250px'
-// }
-
-// touch events ---------------------------
 btnOpenMenu.onclick = function () {
     if (sideBarMenu.style.left != '0') {
         sideBarMenu.style.left = '0'
     }
 }
 
-btnCloseMenu.ontouchend = function () {
+btnCloseMenu.onclick = function () {
     if (sideBarMenu.style.left == '0px') {
-        sideBarMenu.style.left = '-250px' 
+        sideBarMenu.style.left = '-250px'
+        document.body.style.overflow = 'auto'
     }
+}
+
+sideBarMenu.onmouseover = function () {
+    document.body.style.overflow = 'hidden'
+}
+
+
+sideBarMenu.onmouseout = function () {
+    document.body.style.overflowY = 'auto'
+}
+
+window.onscroll = function () {
+    sideBarMenu.style.left = '-250px'
+}
+
+// touch events ---------------------------
+btnOpenMenu.ontouchend = function (e) {
+    e.stopPropagation()
+    sideBarMenu.style.left = '0'
+}
+
+btnCloseMenu.ontouchend = function () {
+    sideBarMenu.style.left = '-250px'
 }
 
 sideBarMenu.ontouchmove = function (e) {
@@ -58,7 +55,7 @@ sideBarMenu.ontouchend = function (e) {
 }
 
 sideBarMenu.ontouchcancel = function (e) {
-    e.stopPropagation()
+
     document.body.style.overflow = 'hidden'
 }
 
