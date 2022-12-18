@@ -2,21 +2,22 @@ let btnOpenMenu = document.getElementById('iconBurger')
 let btnCloseMenu = document.getElementById('closeMenu')
 let sideBarMenu = document.getElementById('sideBar')
 
-
-btnOpenMenu.onclick = function () {
-    if (sideBarMenu.style.left != '0') {
-        sideBarMenu.style.left = '0'
+// Mouse events -----------------------------
+btnOpenMenu.onclick = function (e) {
+    e.stopPropagation()
+    if (sideBarMenu.style.left != '0px') {
+        sideBarMenu.style.left = '0px'
     }
 }
 
 btnCloseMenu.onclick = function () {
     if (sideBarMenu.style.left == '0px') {
         sideBarMenu.style.left = '-250px'
-        document.body.style.overflow = 'auto'
     }
 }
 
-sideBarMenu.onmouseover = function () {
+sideBarMenu.onmouseover = function (e) {
+    e.stopPropagation()
     document.body.style.overflow = 'hidden'
 }
 
@@ -29,22 +30,36 @@ window.onscroll = function () {
     sideBarMenu.style.left = '-250px'
 }
 
+document.body.onclick = function () {
+    if (sideBarMenu.style.left == '0px') {
+        sideBarMenu.style.left = '-100vw'
+    }
+}
+
+document.body.onmouseover = function () {
+    document.body.style.overflowY = 'auto'
+}
+
 // touch events ---------------------------
-btnOpenMenu.ontouchend = function (e) {
+btnOpenMenu.ontouchend = function (event) {
+    event.stopPropagation()
+    if (sideBarMenu.style.left != '0px') {
+        sideBarMenu.style.left = '0px'
+    }
+}
+
+btnCloseMenu.ontouchend = function (e) {
     e.stopPropagation()
-    sideBarMenu.style.left = '0'
+    sideBarMenu.style.left = '-100vw'
+    document.body.style.overflow = 'auto'
 }
 
-btnCloseMenu.ontouchend = function () {
-    sideBarMenu.style.left = '-250px'
-}
-
-sideBarMenu.ontouchmove = function (e) {
+sideBarMenu.ontouchstart = function (e) {
     e.stopPropagation()
     document.body.style.overflow = 'hidden'
 }
 
-sideBarMenu.ontouchstart = function (e) {
+sideBarMenu.ontouchmove = function (e) {
     e.stopPropagation()
     document.body.style.overflow = 'hidden'
 }
@@ -54,19 +69,18 @@ sideBarMenu.ontouchend = function (e) {
     document.body.style.overflow = 'hidden'
 }
 
-sideBarMenu.ontouchcancel = function (e) {
-
-    document.body.style.overflow = 'hidden'
-}
-
-document.body.ontouchmove = function () {
-    sideBarMenu.style.left = '-250px'
-}
-
-document.body.ontouchstart = function () {
+document.body.ontouchend = function () {
+    if (sideBarMenu.style.left == '0px') {
+        sideBarMenu.style.left = '-100vw'
+    }
     document.body.style.overflow = 'auto'
 }
 
-document.body.ontouchend = function () {
-    sideBarMenu.style.left = '-250px'
+document.body.ontouchmove = function () {
+    if (sideBarMenu.style.left == '0px') {
+        sideBarMenu.style.left = '-100vw'
+    }
+    document.body.style.overflow = 'auto'
 }
+
+
