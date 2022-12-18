@@ -25,6 +25,7 @@ body {
     background-color: #1E5959;
 
     transition: left .5s;
+    overflow: auto;
 }
 
 #sideBar h3 {
