@@ -13,6 +13,12 @@ body {
     overflow-x: hidden;
 }
 
+body > a {
+    position: fixed;
+    bottom: 2%;
+    right: 5%;
+}
+
 #sideBar {
     position: fixed;
     left: -250px;
