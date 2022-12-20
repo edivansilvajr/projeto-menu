@@ -14,14 +14,6 @@ body {
     overflow-x: hidden;
 }
 
-header img {
-    position: fixed;
-    top: 90%;
-    right: 3%;
-    width: 50px;
-    backface-visibility: hidden;
-}
-
 #sideBar {
     position: fixed;
     left: -250px;
