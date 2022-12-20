@@ -19,7 +19,7 @@ header img {
     top: 90%;
     right: 3%;
     width: 50px;
-    
+    backface-visibility: hidden;
 }
 
 #sideBar {
