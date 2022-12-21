@@ -24,7 +24,7 @@ body > a {
     left: -250px;
 
     width: 250px;
-    height: 100%;
+    height: 100vh;
     background-color: red;
     padding: 10px;
     background-color: #1E5959;
@@ -117,4 +117,11 @@ footer p {
     color: white;
     text-align: center;
     padding: 2px;
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+    body {
+        width: auto;
+    }
 }
