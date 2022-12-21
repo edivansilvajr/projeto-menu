@@ -16,7 +16,7 @@ body {
 body > a {
     position: fixed;
     bottom: 2%;
-    right: 5%;
+    left: 935px;
 }
 
 #sideBar {
@@ -123,5 +123,16 @@ footer p {
 @media only screen and (max-width: 768px) {
     body {
         width: auto;
+    }
+
+    body > a {
+        bottom: 3%;
+        left: 83%;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    body > a {
+        display: none;
     }
 }
